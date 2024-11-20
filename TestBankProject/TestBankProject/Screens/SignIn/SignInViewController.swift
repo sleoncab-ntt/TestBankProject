@@ -2,7 +2,9 @@
 import UIKit
 
 final class SignInViewController: UIViewController {
-
+    
+    let viewModel = SignInViewModel()
+    
     var isChecked = false
     
     let trustLabel: UILabel = {
@@ -112,6 +114,7 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addActions()
+        viewModel.fechData()
         setup()
     }
     
@@ -194,12 +197,18 @@ final class SignInViewController: UIViewController {
     }
     
     @objc private func btnSignInTapped() {
-        if (userField.text == "Admin" && passwordField.text == "123" && isChecked){
-            navigationController?.pushViewController(MyAccountViewController(), animated: true)
-            print("Sesión iniciada")
-        } else {
-            print("Error al iniciar sesión")
-        }
+        if userField.text == "Admin" && passwordField.text == "123" && isChecked {
+            let homeTabBarController = HomeTabBarController()
+            if let windowScene = view.window?.windowScene {
+                if let window = windowScene.windows.first {
+                    window.rootViewController = homeTabBarController
+                    window.makeKeyAndVisible()
+                }
+            }
+                print("Sesión iniciada")
+            } else {
+                print("Error al iniciar sesión")
+            }
     }
     
     @objc private func btnRegisterTapped() {

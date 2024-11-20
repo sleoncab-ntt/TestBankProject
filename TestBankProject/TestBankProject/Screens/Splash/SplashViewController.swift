@@ -16,7 +16,7 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.toSignInVC()
         }
     }
@@ -27,8 +27,8 @@ final class SplashViewController: UIViewController {
         // Add components to the view
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            titleLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 0)
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
         ])
     }
     

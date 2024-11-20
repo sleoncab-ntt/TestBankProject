@@ -56,7 +56,7 @@ final class MyAccountViewController: UIViewController {
     private func setup() {
         // Set Background Color
         view.backgroundColor = .white
-        // Add object to HomeView
+        // Add components to the view
         view.addSubview(titleLabel)
         view.addSubview(userIcon)
         view.addSubview(subtitleLabel)
@@ -81,6 +81,11 @@ final class MyAccountViewController: UIViewController {
     }
     
     @objc func btnLogOutTapped() {
-        navigationController?.popViewController(animated: true)
+        let splashViewController = SplashViewController()
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let keyWindow = windowScene.windows.first {
+            keyWindow.rootViewController = splashViewController
+            keyWindow.makeKeyAndVisible()
+        }
     }
 }

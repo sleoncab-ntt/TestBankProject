@@ -15,7 +15,27 @@
 		B8DDE9992CEC0AD700FBC05F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9982CEC0AD700FBC05F /* SignInViewController.swift */; };
 		B8DDE99B2CEC0AE500FBC05F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE99A2CEC0AE500FBC05F /* SignUpViewController.swift */; };
 		B8DDE99D2CEC0AFD00FBC05F /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE99C2CEC0AFD00FBC05F /* MyAccountViewController.swift */; };
+		B8DDE9B42CED671D00FBC05F /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DDE9B32CED671D00FBC05F /* Networking.framework */; };
+		B8DDE9B52CED671D00FBC05F /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8DDE9B32CED671D00FBC05F /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8DDE9BF2CED6BA700FBC05F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9BE2CED6BA700FBC05F /* SignInViewModel.swift */; };
+		B8DDE9C52CED7D8100FBC05F /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9C42CED7D8100FBC05F /* MyCardsViewController.swift */; };
+		B8DDE9C72CED80D000FBC05F /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9C62CED80D000FBC05F /* HomeTabBarController.swift */; };
+		B8DDE9CB2CEDA0FD00FBC05F /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9CA2CEDA0FD00FBC05F /* MyCardsViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B8DDE9B62CED671D00FBC05F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B8DDE9B52CED671D00FBC05F /* Networking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B8DDE97D2CEC09B400FBC05F /* TestBankProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBankProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +48,11 @@
 		B8DDE9982CEC0AD700FBC05F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B8DDE99A2CEC0AE500FBC05F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B8DDE99C2CEC0AFD00FBC05F /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		B8DDE9B32CED671D00FBC05F /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DDE9BE2CED6BA700FBC05F /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		B8DDE9C42CED7D8100FBC05F /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		B8DDE9C62CED80D000FBC05F /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		B8DDE9CA2CEDA0FD00FBC05F /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DDE9B42CED671D00FBC05F /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +72,7 @@
 			children = (
 				B8DDE97F2CEC09B400FBC05F /* TestBankProject */,
 				B8DDE97E2CEC09B400FBC05F /* Products */,
+				B8DDE9B22CED671D00FBC05F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,9 +87,9 @@
 		B8DDE97F2CEC09B400FBC05F /* TestBankProject */ = {
 			isa = PBXGroup;
 			children = (
-				B8DDE98E2CEC09B500FBC05F /* Info.plist */,
-				B8DDE9952CEC0A4F00FBC05F /* Views */,
+				B8DDE9B92CED68BD00FBC05F /* Screens */,
 				B8DDE9942CEC0A2300FBC05F /* Assets */,
+				B8DDE98E2CEC09B500FBC05F /* Info.plist */,
 			);
 			path = TestBankProject;
 			sourceTree = "<group>";
@@ -78,15 +105,75 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		B8DDE9952CEC0A4F00FBC05F /* Views */ = {
+		B8DDE9B22CED671D00FBC05F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDE9B32CED671D00FBC05F /* Networking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8DDE9B92CED68BD00FBC05F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDE9BA2CED68D600FBC05F /* Splash */,
+				B8DDE9BB2CED68E500FBC05F /* SignIn */,
+				B8DDE9BC2CED691300FBC05F /* SignUp */,
+				B8DDE9BD2CED693600FBC05F /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B8DDE9BA2CED68D600FBC05F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				B8DDE9962CEC0AB400FBC05F /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B8DDE9BB2CED68E500FBC05F /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
 				B8DDE9982CEC0AD700FBC05F /* SignInViewController.swift */,
+				B8DDE9BE2CED6BA700FBC05F /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		B8DDE9BC2CED691300FBC05F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
 				B8DDE99A2CEC0AE500FBC05F /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		B8DDE9BD2CED693600FBC05F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDE9C62CED80D000FBC05F /* HomeTabBarController.swift */,
+				B8DDE9C32CED7D6200FBC05F /* MyCards */,
+				B8DDE9C22CED7D5B00FBC05F /* MyAccount */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B8DDE9C22CED7D5B00FBC05F /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
 				B8DDE99C2CEC0AFD00FBC05F /* MyAccountViewController.swift */,
 			);
-			path = Views;
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		B8DDE9C32CED7D6200FBC05F /* MyCards */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDE9C42CED7D8100FBC05F /* MyCardsViewController.swift */,
+				B8DDE9CA2CEDA0FD00FBC05F /* MyCardsViewModel.swift */,
+			);
+			path = MyCards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +186,7 @@
 				B8DDE9792CEC09B400FBC05F /* Sources */,
 				B8DDE97A2CEC09B400FBC05F /* Frameworks */,
 				B8DDE97B2CEC09B400FBC05F /* Resources */,
+				B8DDE9B62CED671D00FBC05F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,9 +247,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DDE9C52CED7D8100FBC05F /* MyCardsViewController.swift in Sources */,
 				B8DDE9992CEC0AD700FBC05F /* SignInViewController.swift in Sources */,
+				B8DDE9CB2CEDA0FD00FBC05F /* MyCardsViewModel.swift in Sources */,
+				B8DDE9BF2CED6BA700FBC05F /* SignInViewModel.swift in Sources */,
 				B8DDE9812CEC09B400FBC05F /* AppDelegate.swift in Sources */,
 				B8DDE99D2CEC0AFD00FBC05F /* MyAccountViewController.swift in Sources */,
+				B8DDE9C72CED80D000FBC05F /* HomeTabBarController.swift in Sources */,
 				B8DDE9832CEC09B400FBC05F /* SceneDelegate.swift in Sources */,
 				B8DDE9972CEC0AB400FBC05F /* SplashViewController.swift in Sources */,
 				B8DDE99B2CEC0AE500FBC05F /* SignUpViewController.swift in Sources */,
