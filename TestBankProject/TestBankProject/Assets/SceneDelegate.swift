@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MultiView
-//
-//  Created by Sebastian Leon Cabanillas on 12/11/24.
-//
 
 import UIKit
 

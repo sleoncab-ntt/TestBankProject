@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  MultiView
-//
-//  Created by Sebastian Leon Cabanillas on 12/11/24.
-//
 
 import UIKit
 
@@ -149,7 +143,7 @@ final class SignInViewController: UIViewController {
         view.addSubview(trustLabel)
         // Create constraints
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             

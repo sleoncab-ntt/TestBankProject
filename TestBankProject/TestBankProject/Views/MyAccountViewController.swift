@@ -1,9 +1,3 @@
-//
-//  MyAccountViewController.swift
-//  MultiView
-//
-//  Created by Sebastian Leon Cabanillas on 16/11/24.
-//
 
 import UIKit
 
@@ -69,7 +63,7 @@ final class MyAccountViewController: UIViewController {
         view.addSubview(btnLogout)
         // Create constraints
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             userIcon.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
@@ -79,7 +73,7 @@ final class MyAccountViewController: UIViewController {
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
             subtitleLabel.leadingAnchor.constraint(equalTo: userIcon.leadingAnchor, constant: 55),
             subtitleLabel.heightAnchor.constraint(equalToConstant: 50),
-            btnLogout.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
+            btnLogout.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             btnLogout.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
             btnLogout.widthAnchor.constraint(equalToConstant: 320),
             btnLogout.heightAnchor.constraint(equalToConstant: 60)
