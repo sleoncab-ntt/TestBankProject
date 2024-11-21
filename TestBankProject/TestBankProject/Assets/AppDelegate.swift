@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  TestBankProject
 //
-//  Created by Sebastian Leon Cabanillas on 18/11/24.
-//
 
 import UIKit
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83C507C2CEEEE2F0091BBA2 /* SignInSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C507B2CEEEE2F0091BBA2 /* SignInSessionManager.swift */; };
 		B8DDE9812CEC09B400FBC05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9802CEC09B400FBC05F /* AppDelegate.swift */; };
 		B8DDE9832CEC09B400FBC05F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9822CEC09B400FBC05F /* SceneDelegate.swift */; };
 		B8DDE98A2CEC09B500FBC05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DDE9892CEC09B500FBC05F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B83C507B2CEEEE2F0091BBA2 /* SignInSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSessionManager.swift; sourceTree = "<group>"; };
 		B8DDE97D2CEC09B400FBC05F /* TestBankProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBankProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DDE9802CEC09B400FBC05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DDE9822CEC09B400FBC05F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		B8DDE9B92CED68BD00FBC05F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B83C507B2CEEEE2F0091BBA2 /* SignInSessionManager.swift */,
 				B8DDE9BA2CED68D600FBC05F /* Splash */,
 				B8DDE9BB2CED68E500FBC05F /* SignIn */,
 				B8DDE9BC2CED691300FBC05F /* SignUp */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8DDE9C52CED7D8100FBC05F /* MyCardsViewController.swift in Sources */,
+				B83C507C2CEEEE2F0091BBA2 /* SignInSessionManager.swift in Sources */,
 				B8DDE9992CEC0AD700FBC05F /* SignInViewController.swift in Sources */,
 				B8DDE9CB2CEDA0FD00FBC05F /* MyCardsViewModel.swift in Sources */,
 				B8DDE9BF2CED6BA700FBC05F /* SignInViewModel.swift in Sources */,

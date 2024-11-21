@@ -6,19 +6,19 @@
 import Foundation
 
 public struct UsersListResponse: Decodable {
-    let count: Int
-    let users: [Users]
+    public let count: Int
+    public let users: [Users]
 }
 
-struct Users: Decodable {
-    let id: Int
-    let user: String
-    let email: String
-    let password: String
-    let cardList: [Cards]
+public struct Users: Decodable {
+    public let id: Int
+    public let user: String
+    public let email: String
+    public let password: String
+    public let cardList: [Cards]
 }
 
-struct Cards: Decodable {
-    let cardName: String
-    let balance: Double
+public struct Cards: Decodable {
+    public let cardName: String
+    public let balance: Double
 }

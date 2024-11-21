@@ -1,3 +1,7 @@
+//
+//  SplashviewController.swift
+//  TestBankProject
+//
 
 import UIKit
 

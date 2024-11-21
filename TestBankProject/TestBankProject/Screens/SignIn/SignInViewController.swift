@@ -1,3 +1,7 @@
+//
+//  SignInViewController.swift
+//  TestBankProject
+//
 
 import UIKit
 
@@ -114,7 +118,6 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addActions()
-        viewModel.fechData()
         setup()
     }
     
@@ -149,46 +152,36 @@ final class SignInViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
             userIcon.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
             userIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             userIcon.widthAnchor.constraint(equalToConstant: 80),
             userIcon.heightAnchor.constraint(equalToConstant: 80),
-            
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 70),
             subtitleLabel.leadingAnchor.constraint(equalTo: userIcon.trailingAnchor, constant: 10),
             subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            
             userField.topAnchor.constraint(equalTo: userIcon.bottomAnchor, constant: 40),
             userField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             userField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            
             underlineUser.topAnchor.constraint(equalTo: userField.bottomAnchor, constant: 5),
             underlineUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             underlineUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             underlineUser.heightAnchor.constraint(equalToConstant: 0.5),
-            
             passwordField.topAnchor.constraint(equalTo: userField.bottomAnchor, constant: 30),
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            
             underlinePsswd.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 5),
             underlinePsswd.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             underlinePsswd.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             underlinePsswd.heightAnchor.constraint(equalToConstant: 0.5),
-            
             registerLabel.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
             registerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             registerLabel.widthAnchor.constraint(equalToConstant: 200),
-            
             checkBoxButton.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 30),
             checkBoxButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             checkBoxButton.heightAnchor.constraint(equalToConstant: 50),
-            
             trustLabel.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 30),
             trustLabel.leadingAnchor.constraint(equalTo: checkBoxButton.leadingAnchor, constant: 30),
             trustLabel.heightAnchor.constraint(equalToConstant: 50),
-            
             btnSignIn.topAnchor.constraint(equalTo: checkBoxButton.bottomAnchor, constant: 30),
             btnSignIn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
             btnSignIn.widthAnchor.constraint(equalToConstant: 330),
@@ -197,18 +190,35 @@ final class SignInViewController: UIViewController {
     }
     
     @objc private func btnSignInTapped() {
-        if userField.text == "Admin" && passwordField.text == "123" && isChecked {
-            let homeTabBarController = HomeTabBarController()
-            if let windowScene = view.window?.windowScene {
-                if let window = windowScene.windows.first {
-                    window.rootViewController = homeTabBarController
-                    window.makeKeyAndVisible()
-                }
-            }
+        Task {
+            let credentialsList = await viewModel.fetchCredentials()
+            if let user = credentialsList.first(where: { $0.user == userField.text && $0.password == passwordField.text }) {
                 print("Sesión iniciada")
+                
+                SessionManager.shared.userId = user.id
+                SessionManager.shared.userName = user.user
+                SessionManager.shared.email = user.email
+                SessionManager.shared.password = user.password
+                
+                print("id: \(SessionManager.shared.userId ?? -1)")
+                print("user: \(SessionManager.shared.userName ?? "nil")")
+                print("email: \(SessionManager.shared.email ?? "nil")")
+                print("password: \(SessionManager.shared.email ?? "nil")")
+                
+                let homeTabBarController = HomeTabBarController()
+                if let windowScene = view.window?.windowScene {
+                    if let window = windowScene.windows.first {
+                        window.rootViewController = homeTabBarController
+                        window.makeKeyAndVisible()
+                    }
+                }
+                
+                // ver como guardar el user id para posterior uso
+                
             } else {
-                print("Error al iniciar sesión")
+                print("Usuario o contraseña incorrectos")
             }
+        }
     }
     
     @objc private func btnRegisterTapped() {

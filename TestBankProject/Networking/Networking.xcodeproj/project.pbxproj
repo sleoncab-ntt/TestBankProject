@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83C50782CEEA2760091BBA2 /* CredentialsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50772CEEA2760091BBA2 /* CredentialsListResponse.swift */; };
+		B83C507A2CEEBB710091BBA2 /* CardsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50792CEEBB710091BBA2 /* CardsListResponse.swift */; };
 		B8DDE9AC2CED66E300FBC05F /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = B8DDE9AB2CED66E300FBC05F /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8DDE9B82CED681300FBC05F /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9B72CED681300FBC05F /* NetworkingManager.swift */; };
 		B8DDE9CD2CEDA1FC00FBC05F /* UsersListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9CC2CEDA1FC00FBC05F /* UsersListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B83C50772CEEA2760091BBA2 /* CredentialsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsListResponse.swift; sourceTree = "<group>"; };
+		B83C50792CEEBB710091BBA2 /* CardsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListResponse.swift; sourceTree = "<group>"; };
 		B8DDE9A82CED66E300FBC05F /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DDE9AB2CED66E300FBC05F /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		B8DDE9B72CED681300FBC05F /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 				B8DDE9AB2CED66E300FBC05F /* Networking.h */,
 				B8DDE9B72CED681300FBC05F /* NetworkingManager.swift */,
 				B8DDE9CC2CEDA1FC00FBC05F /* UsersListResponse.swift */,
+				B83C50772CEEA2760091BBA2 /* CredentialsListResponse.swift */,
+				B83C50792CEEBB710091BBA2 /* CardsListResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B83C50782CEEA2760091BBA2 /* CredentialsListResponse.swift in Sources */,
 				B8DDE9B82CED681300FBC05F /* NetworkingManager.swift in Sources */,
+				B83C507A2CEEBB710091BBA2 /* CardsListResponse.swift in Sources */,
 				B8DDE9CD2CEDA1FC00FBC05F /* UsersListResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

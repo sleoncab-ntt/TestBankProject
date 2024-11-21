@@ -7,7 +7,9 @@ import UIKit
 
 final class MyCardsViewController: UIViewController {
     
-    let titleLabel: UILabel = {
+    private let viewModel = MyCardsViewModel()
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Testbank"
         label.textColor = .red
@@ -21,6 +23,10 @@ final class MyCardsViewController: UIViewController {
         super.viewDidLoad()
         addActions()
         setup()
+        
+        Task {
+            print(await viewModel.fetchCardsByID(for: 1))
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +46,7 @@ final class MyCardsViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     

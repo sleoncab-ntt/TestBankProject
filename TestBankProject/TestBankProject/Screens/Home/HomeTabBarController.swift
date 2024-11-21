@@ -12,7 +12,6 @@ final class HomeTabBarController: UITabBarController {
         
         let myCardsViewController = MyCardsViewController()
         myCardsViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
-        
 
         let myAccountViewController = MyAccountViewController()
         myAccountViewController.tabBarItem = UITabBarItem(title: "My Account", image: UIImage(systemName: "person.fill"), tag: 1)
