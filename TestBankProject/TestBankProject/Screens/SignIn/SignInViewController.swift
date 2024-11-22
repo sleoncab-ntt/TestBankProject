@@ -191,20 +191,12 @@ final class SignInViewController: UIViewController {
     
     @objc private func btnSignInTapped() {
         Task {
-            let credentialsList = await viewModel.fetchCredentials()
-            if let user = credentialsList.first(where: { $0.user == userField.text && $0.password == passwordField.text }) {
-                print("Sesión iniciada")
+            let user = userField.text ?? ""
+            let password = passwordField.text ?? ""
                 
-                SessionManager.shared.userId = user.id
-                SessionManager.shared.userName = user.user
-                SessionManager.shared.email = user.email
-                SessionManager.shared.password = user.password
-                
-                print("id: \(SessionManager.shared.userId ?? -1)")
-                print("user: \(SessionManager.shared.userName ?? "nil")")
-                print("email: \(SessionManager.shared.email ?? "nil")")
-                print("password: \(SessionManager.shared.email ?? "nil")")
-                
+            let isSuccess = await viewModel.authANDSaveCredentials(user: user, password: password)
+            
+            if isSuccess {
                 let homeTabBarController = HomeTabBarController()
                 if let windowScene = view.window?.windowScene {
                     if let window = windowScene.windows.first {
@@ -212,9 +204,7 @@ final class SignInViewController: UIViewController {
                         window.makeKeyAndVisible()
                     }
                 }
-                
-                // ver como guardar el user id para posterior uso
-                
+                print("Sesión iniciada")
             } else {
                 print("Usuario o contraseña incorrectos")
             }

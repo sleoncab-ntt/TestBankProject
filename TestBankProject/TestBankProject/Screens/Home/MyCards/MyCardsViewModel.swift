@@ -6,21 +6,21 @@
 import Foundation
 import Networking
 
+public struct UserCards {
+    public let id: Int
+    public let cardList: [Card]
+}
+
+public struct Card {
+    public let cardName: String
+    public let balance: Double
+}
+
 class MyCardsViewModel {
     
     private let networkingManager = NetworkingManager()
     
     let URL = "http://localhost:3000/Users/Cards"
-    
-    struct UserCards {
-        let id: Int
-        let cardList: [Card]
-    }
-    
-    struct Card {
-        let cardName: String
-        let balance: Double
-    }
     
     func fetchCards() async -> [UserCards] {
         let cardsListResponse: CardsListResponse? = await networkingManager.fetchData(url: URL)

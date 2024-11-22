@@ -1,5 +1,5 @@
 //
-//  SignInSessionManager.swift
+//  SessionManager.swift
 //  TestBankProject
 //
 

@@ -6,16 +6,16 @@
 import Foundation
 import Networking
 
+struct UserCredentials {
+    let id: Int
+    let user: String
+    let email: String
+    let password: String
+}
+
 class SignInViewModel {
     
     private let networkingManager = NetworkingManager()
-    
-    struct UserCredentials {
-        let id: Int
-        let user: String
-        let email: String
-        let password: String
-    }
     
     func fetchCredentials() async -> [UserCredentials] {
         let credentialsList: CredentialsListResponse? = await networkingManager.fetchData(url: "http://localhost:3000/Users/Credentials")
@@ -31,11 +31,16 @@ class SignInViewModel {
         }
     }
     
-//    func fetchData() {
-//        Task {
-//            let usersList: UsersListResponse? = await networkingManager.fetchData(url: "http://localhost:3000/Users")
-//            print(usersList ?? "error")
-//        }
-//    }
-    
+    func authANDSaveCredentials(user: String, password: String) async -> Bool {
+        let credentialsList = await fetchCredentials()
+        
+        if let user = credentialsList.first(where: { $0.user == user && $0.password == password }) {
+            SessionManager.shared.userId = user.id
+            SessionManager.shared.userName = user.user
+            SessionManager.shared.email = user.email
+            SessionManager.shared.password = user.password
+            return true
+        }
+        return false
+    }
 }

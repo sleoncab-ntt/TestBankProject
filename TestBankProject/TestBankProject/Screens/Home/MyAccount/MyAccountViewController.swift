@@ -19,9 +19,9 @@ final class MyAccountViewController: UIViewController {
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "My Account"
+        label.text = SessionManager.shared.userName
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -41,9 +41,17 @@ final class MyAccountViewController: UIViewController {
         button.backgroundColor = .red
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    let lineTabBar: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override func viewDidLoad() {
@@ -65,6 +73,7 @@ final class MyAccountViewController: UIViewController {
         view.addSubview(userIcon)
         view.addSubview(subtitleLabel)
         view.addSubview(btnLogout)
+        view.addSubview(lineTabBar)
         // Create constraints
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -75,12 +84,16 @@ final class MyAccountViewController: UIViewController {
             userIcon.widthAnchor.constraint(equalToConstant: 50),
             userIcon.heightAnchor.constraint(equalToConstant: 50),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
-            subtitleLabel.leadingAnchor.constraint(equalTo: userIcon.leadingAnchor, constant: 55),
+            subtitleLabel.leadingAnchor.constraint(equalTo: userIcon.trailingAnchor, constant: 10),
             subtitleLabel.heightAnchor.constraint(equalToConstant: 50),
             btnLogout.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             btnLogout.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
             btnLogout.widthAnchor.constraint(equalToConstant: 320),
-            btnLogout.heightAnchor.constraint(equalToConstant: 60)
+            btnLogout.heightAnchor.constraint(equalToConstant: 60),
+            lineTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            lineTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0),
+            lineTabBar.heightAnchor.constraint(equalToConstant: 0.5),
+            lineTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
     }
     
@@ -90,6 +103,7 @@ final class MyAccountViewController: UIViewController {
            let keyWindow = windowScene.windows.first {
             keyWindow.rootViewController = splashViewController
             keyWindow.makeKeyAndVisible()
+            print("Sesión cerrada")
         }
     }
 }
