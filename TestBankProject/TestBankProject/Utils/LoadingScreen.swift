@@ -21,12 +21,12 @@ final class LoadingScreen {
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.color = .white
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.startAnimating()
-        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        // Add components to the view
         spinnerView.addSubview(activityIndicator)
         viewController.view.addSubview(spinnerView)
-        
+        // Create Constraints
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: spinnerView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: spinnerView.centerYAnchor)

@@ -165,6 +165,7 @@
 		B83C509F2CF6EC690091BBA2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B83C507D2CF01B200091BBA2 /* SessionManager.swift */,
 				B83C50A02CF6EC7A0091BBA2 /* LoadingScreen.swift */,
 			);
 			path = Utils;
@@ -190,6 +191,7 @@
 		B8DDE97F2CEC09B400FBC05F /* TestBankProject */ = {
 			isa = PBXGroup;
 			children = (
+				B8DDE9BA2CED68D600FBC05F /* Splash */,
 				B83C509F2CF6EC690091BBA2 /* Utils */,
 				B83C50892CF599710091BBA2 /* Components */,
 				B8DDE9B92CED68BD00FBC05F /* Screens */,
@@ -221,11 +223,7 @@
 		B8DDE9B92CED68BD00FBC05F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B83C507D2CF01B200091BBA2 /* SessionManager.swift */,
-				B8DDE9BA2CED68D600FBC05F /* Splash */,
 				B8DDE9BB2CED68E500FBC05F /* SignIn */,
-				B8DDE9BC2CED691300FBC05F /* SignUp */,
-				B8DDE9BD2CED693600FBC05F /* Home */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -243,6 +241,8 @@
 			children = (
 				B8DDE9982CEC0AD700FBC05F /* SignInViewController.swift */,
 				B8DDE9BE2CED6BA700FBC05F /* SignInViewModel.swift */,
+				B8DDE9BC2CED691300FBC05F /* SignUp */,
+				B8DDE9BD2CED693600FBC05F /* Home */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
