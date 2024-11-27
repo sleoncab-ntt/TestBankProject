@@ -7,7 +7,7 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Testbank"
         label.textColor = .red

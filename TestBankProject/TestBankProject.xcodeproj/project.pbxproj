@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		B83C507E2CF01B200091BBA2 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C507D2CF01B200091BBA2 /* SessionManager.swift */; };
 		B83C50802CF025000091BBA2 /* MyCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C507F2CF025000091BBA2 /* MyCardsCell.swift */; };
+		B83C50842CF586B10091BBA2 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50832CF586B10091BBA2 /* PersonalInfoViewController.swift */; };
+		B83C50862CF586C70091BBA2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50852CF586C70091BBA2 /* SettingsViewController.swift */; };
+		B83C50882CF586D90091BBA2 /* HelpCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50872CF586D90091BBA2 /* HelpCenterViewController.swift */; };
+		B83C508B2CF599840091BBA2 /* CustomEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C508A2CF599840091BBA2 /* CustomEditButton.swift */; };
+		B83C508E2CF59EA00091BBA2 /* ChangeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C508D2CF59EA00091BBA2 /* ChangeInfoViewController.swift */; };
+		B83C50902CF6C9770091BBA2 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C508F2CF6C9770091BBA2 /* ChangeEmailViewController.swift */; };
+		B83C50942CF6CE350091BBA2 /* CommonQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50932CF6CE350091BBA2 /* CommonQuestionsViewController.swift */; };
+		B83C50992CF6CFCD0091BBA2 /* CustomArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50982CF6CFCD0091BBA2 /* CustomArrowButton.swift */; };
+		B83C509E2CF6D8280091BBA2 /* AnswerSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C509D2CF6D8280091BBA2 /* AnswerSheetViewController.swift */; };
+		B83C50A12CF6EC7A0091BBA2 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C50A02CF6EC7A0091BBA2 /* LoadingScreen.swift */; };
 		B8DDE9812CEC09B400FBC05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9802CEC09B400FBC05F /* AppDelegate.swift */; };
 		B8DDE9832CEC09B400FBC05F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDE9822CEC09B400FBC05F /* SceneDelegate.swift */; };
 		B8DDE98A2CEC09B500FBC05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DDE9892CEC09B500FBC05F /* Assets.xcassets */; };
@@ -42,6 +52,16 @@
 /* Begin PBXFileReference section */
 		B83C507D2CF01B200091BBA2 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		B83C507F2CF025000091BBA2 /* MyCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsCell.swift; sourceTree = "<group>"; };
+		B83C50832CF586B10091BBA2 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		B83C50852CF586C70091BBA2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B83C50872CF586D90091BBA2 /* HelpCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterViewController.swift; sourceTree = "<group>"; };
+		B83C508A2CF599840091BBA2 /* CustomEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEditButton.swift; sourceTree = "<group>"; };
+		B83C508D2CF59EA00091BBA2 /* ChangeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeInfoViewController.swift; sourceTree = "<group>"; };
+		B83C508F2CF6C9770091BBA2 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		B83C50932CF6CE350091BBA2 /* CommonQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonQuestionsViewController.swift; sourceTree = "<group>"; };
+		B83C50982CF6CFCD0091BBA2 /* CustomArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArrowButton.swift; sourceTree = "<group>"; };
+		B83C509D2CF6D8280091BBA2 /* AnswerSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSheetViewController.swift; sourceTree = "<group>"; };
+		B83C50A02CF6EC7A0091BBA2 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		B8DDE97D2CEC09B400FBC05F /* TestBankProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBankProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DDE9802CEC09B400FBC05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DDE9822CEC09B400FBC05F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +91,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B83C50822CF586560091BBA2 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				B83C508C2CF59E660091BBA2 /* Personal_Info */,
+				B83C50912CF6CDB90091BBA2 /* Settings */,
+				B83C50922CF6CDC70091BBA2 /* HelpCenter */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		B83C50892CF599710091BBA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B83C508A2CF599840091BBA2 /* CustomEditButton.swift */,
+				B83C50982CF6CFCD0091BBA2 /* CustomArrowButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B83C508C2CF59E660091BBA2 /* Personal_Info */ = {
+			isa = PBXGroup;
+			children = (
+				B83C50832CF586B10091BBA2 /* PersonalInfoViewController.swift */,
+				B83C50952CF6CEB30091BBA2 /* PersonalOptions */,
+			);
+			path = Personal_Info;
+			sourceTree = "<group>";
+		};
+		B83C50912CF6CDB90091BBA2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B83C50852CF586C70091BBA2 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B83C50922CF6CDC70091BBA2 /* HelpCenter */ = {
+			isa = PBXGroup;
+			children = (
+				B83C50872CF586D90091BBA2 /* HelpCenterViewController.swift */,
+				B83C50962CF6CEC70091BBA2 /* HelpOptions */,
+			);
+			path = HelpCenter;
+			sourceTree = "<group>";
+		};
+		B83C50952CF6CEB30091BBA2 /* PersonalOptions */ = {
+			isa = PBXGroup;
+			children = (
+				B83C508F2CF6C9770091BBA2 /* ChangeEmailViewController.swift */,
+				B83C508D2CF59EA00091BBA2 /* ChangeInfoViewController.swift */,
+			);
+			path = PersonalOptions;
+			sourceTree = "<group>";
+		};
+		B83C50962CF6CEC70091BBA2 /* HelpOptions */ = {
+			isa = PBXGroup;
+			children = (
+				B83C509C2CF6D4070091BBA2 /* CommonQuestions */,
+			);
+			path = HelpOptions;
+			sourceTree = "<group>";
+		};
+		B83C509C2CF6D4070091BBA2 /* CommonQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				B83C50932CF6CE350091BBA2 /* CommonQuestionsViewController.swift */,
+				B83C509D2CF6D8280091BBA2 /* AnswerSheetViewController.swift */,
+			);
+			path = CommonQuestions;
+			sourceTree = "<group>";
+		};
+		B83C509F2CF6EC690091BBA2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B83C50A02CF6EC7A0091BBA2 /* LoadingScreen.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B8DDE9742CEC09B400FBC05F = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +190,8 @@
 		B8DDE97F2CEC09B400FBC05F /* TestBankProject */ = {
 			isa = PBXGroup;
 			children = (
+				B83C509F2CF6EC690091BBA2 /* Utils */,
+				B83C50892CF599710091BBA2 /* Components */,
 				B8DDE9B92CED68BD00FBC05F /* Screens */,
 				B8DDE9942CEC0A2300FBC05F /* Assets */,
 				B8DDE98E2CEC09B500FBC05F /* Info.plist */,
@@ -168,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				B8DDE99C2CEC0AFD00FBC05F /* MyAccountViewController.swift */,
+				B83C50822CF586560091BBA2 /* Options */,
 			);
 			path = MyAccount;
 			sourceTree = "<group>";
@@ -176,8 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				B8DDE9C42CED7D8100FBC05F /* MyCardsViewController.swift */,
-				B8DDE9CA2CEDA0FD00FBC05F /* MyCardsViewModel.swift */,
 				B83C507F2CF025000091BBA2 /* MyCardsCell.swift */,
+				B8DDE9CA2CEDA0FD00FBC05F /* MyCardsViewModel.swift */,
 			);
 			path = MyCards;
 			sourceTree = "<group>";
@@ -257,13 +359,23 @@
 				B83C507E2CF01B200091BBA2 /* SessionManager.swift in Sources */,
 				B8DDE9992CEC0AD700FBC05F /* SignInViewController.swift in Sources */,
 				B8DDE9CB2CEDA0FD00FBC05F /* MyCardsViewModel.swift in Sources */,
+				B83C508B2CF599840091BBA2 /* CustomEditButton.swift in Sources */,
 				B8DDE9BF2CED6BA700FBC05F /* SignInViewModel.swift in Sources */,
+				B83C50942CF6CE350091BBA2 /* CommonQuestionsViewController.swift in Sources */,
 				B8DDE9812CEC09B400FBC05F /* AppDelegate.swift in Sources */,
+				B83C50882CF586D90091BBA2 /* HelpCenterViewController.swift in Sources */,
+				B83C509E2CF6D8280091BBA2 /* AnswerSheetViewController.swift in Sources */,
 				B8DDE99D2CEC0AFD00FBC05F /* MyAccountViewController.swift in Sources */,
 				B8DDE9C72CED80D000FBC05F /* HomeTabBarController.swift in Sources */,
+				B83C50A12CF6EC7A0091BBA2 /* LoadingScreen.swift in Sources */,
+				B83C50842CF586B10091BBA2 /* PersonalInfoViewController.swift in Sources */,
+				B83C50902CF6C9770091BBA2 /* ChangeEmailViewController.swift in Sources */,
+				B83C50862CF586C70091BBA2 /* SettingsViewController.swift in Sources */,
 				B8DDE9832CEC09B400FBC05F /* SceneDelegate.swift in Sources */,
 				B8DDE9972CEC0AB400FBC05F /* SplashViewController.swift in Sources */,
+				B83C50992CF6CFCD0091BBA2 /* CustomArrowButton.swift in Sources */,
 				B8DDE99B2CEC0AE500FBC05F /* SignUpViewController.swift in Sources */,
+				B83C508E2CF59EA00091BBA2 /* ChangeInfoViewController.swift in Sources */,
 				B83C50802CF025000091BBA2 /* MyCardsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

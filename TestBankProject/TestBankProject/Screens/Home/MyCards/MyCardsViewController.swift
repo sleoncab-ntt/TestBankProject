@@ -7,11 +7,19 @@ import UIKit
 
 final class MyCardsViewController: UIViewController {
     
+    private let loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .red
+        indicator.hidesWhenStopped = true
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
     private let viewModel = MyCardsViewModel()
     
-    var cardList: [Card] = []
+    private var cardList: [Card] = []
         
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .quaternarySystemFill
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +36,7 @@ final class MyCardsViewController: UIViewController {
         return label
     }()
     
-    let subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "My Products"
         label.textColor = .black
@@ -38,14 +46,14 @@ final class MyCardsViewController: UIViewController {
         return label
     }()
     
-    let underline: UIView = {
+    private let underline: UIView = {
         let view = UIView()
         view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let lineTabBar: UIView = {
+    private let lineTabBar: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -58,11 +66,10 @@ final class MyCardsViewController: UIViewController {
         setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     private func setupTableView() {
+        tableView.register(MyCardsCell.self, forCellReuseIdentifier: "MyCardsCell")
+        tableView.delegate = self
+        tableView.dataSource = self
         Task {
             cardList = await saveCardListOfUser()
             tableView.reloadData()
@@ -73,15 +80,12 @@ final class MyCardsViewController: UIViewController {
         // Set Background Color
         view.backgroundColor = .white
         // Add components to the view
+        view.addSubview(loadingIndicator)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(underline)
         view.addSubview(lineTabBar)
         view.addSubview(tableView)
-        // Config tableView
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MyCardsCell.self, forCellReuseIdentifier: "MyCardsCell")
         // Create constraints
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -97,16 +101,26 @@ final class MyCardsViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: underline.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0),
+            tableView.bottomAnchor.constraint(equalTo: lineTabBar.bottomAnchor, constant: -0.5),
             lineTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             lineTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0),
             lineTabBar.heightAnchor.constraint(equalToConstant: 0.5),
             lineTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
-    func saveCardListOfUser() async -> [Card] {
+    private func saveCardListOfUser() async -> [Card] {
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingIndicator.startAnimating()
+            self?.loadingIndicator.isHidden = false
+        }
         let cardList = await viewModel.fetchCardsByID(for: SessionManager.shared.userId!)
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingIndicator.stopAnimating()
+            self?.loadingIndicator.isHidden = true
+        }
         return cardList
     }
     
@@ -128,7 +142,7 @@ extension MyCardsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCardsCell", for: indexPath) as! MyCardsCell
         let card = cardList[indexPath.row]
-        cell.configure(with: card)
+        cell.setupCard(with: card)
         return cell
     }
 }

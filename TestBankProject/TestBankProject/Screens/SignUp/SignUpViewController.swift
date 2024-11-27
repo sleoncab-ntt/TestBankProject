@@ -7,7 +7,7 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
         label.textColor = .black
@@ -17,7 +17,7 @@ final class SignUpViewController: UIViewController {
         return label
     }()
     
-    let userRegField: UITextField = {
+    private let userRegField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "User"
         textField.font = UIFont.systemFont(ofSize: 25)
@@ -28,7 +28,7 @@ final class SignUpViewController: UIViewController {
         return textField
     }()
     
-    let emailRegField: UITextField = {
+    private let emailRegField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
         textField.font = UIFont.systemFont(ofSize: 25)
@@ -39,7 +39,7 @@ final class SignUpViewController: UIViewController {
         return textField
     }()
     
-    let passwordRegField: UITextField = {
+    private let passwordRegField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Create Password"
         textField.font = UIFont.systemFont(ofSize: 25)
@@ -50,7 +50,7 @@ final class SignUpViewController: UIViewController {
         return textField
     }()
     
-    let btnSignUp: UIButton = {
+    private let btnSignUp: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
         button.backgroundColor = .red
@@ -62,7 +62,7 @@ final class SignUpViewController: UIViewController {
         return button
     }()
     
-    let signInLabel: UILabel = {
+    private let signInLabel: UILabel = {
         let label = UILabel()
         label.text = "Already have an account?"
         label.textColor = .blue
@@ -72,21 +72,21 @@ final class SignUpViewController: UIViewController {
         return label
     }()
     
-    let underlineUserReg: UIView = {
+    private let underlineUserReg: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let underlineEmailReg: UIView = {
+    private let underlineEmailReg: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let underlinePsswdReg: UIView = {
+    private let underlinePsswdReg: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false

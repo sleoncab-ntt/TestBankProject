@@ -8,6 +8,7 @@ import Networking
 
 struct UserCredentials {
     let id: Int
+    let name: String
     let user: String
     let email: String
     let password: String
@@ -22,7 +23,7 @@ class SignInViewModel {
 
         if let credentials = credentialsList?.users {
             let userCredentialsArray = credentials.map { user in
-                UserCredentials(id: user.id, user: user.user, email: user.email, password: user.password)
+                UserCredentials(id: user.id, name: user.name, user: user.user, email: user.email, password: user.password)
             }
             return userCredentialsArray
         } else {
@@ -36,7 +37,8 @@ class SignInViewModel {
         
         if let user = credentialsList.first(where: { $0.user == user && $0.password == password }) {
             SessionManager.shared.userId = user.id
-            SessionManager.shared.userName = user.user
+            SessionManager.shared.name = user.name
+            SessionManager.shared.user = user.user
             SessionManager.shared.email = user.email
             SessionManager.shared.password = user.password
             return true

@@ -7,11 +7,11 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
-    let viewModel = SignInViewModel()
+    private let viewModel = SignInViewModel()
     
-    var isChecked = false
+    private var isChecked = false
     
-    let trustLabel: UILabel = {
+    private let trustLabel: UILabel = {
         let label = UILabel()
         label.text = "Trust this device"
         label.textColor = .black
@@ -22,7 +22,7 @@ final class SignInViewController: UIViewController {
         return label
     }()
     
-    let checkBoxButton: UIButton = {
+    private let checkBoxButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         button.setImage(UIImage(systemName: "square"), for: .normal)
@@ -31,21 +31,21 @@ final class SignInViewController: UIViewController {
         return button
     }()
     
-    let underlinePsswd: UIView = {
+    private let underlinePsswd: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let underlineUser: UIView = {
+    private let underlineUser: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let userIcon: UIImageView = {
+    private let userIcon: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "person.circle")
         img.tintColor = .red
@@ -53,7 +53,7 @@ final class SignInViewController: UIViewController {
         return img
     }()
     
-    let registerLabel: UILabel = {
+    private let registerLabel: UILabel = {
         let label = UILabel()
         label.text = "Create Account"
         label.textColor = .blue
@@ -63,7 +63,7 @@ final class SignInViewController: UIViewController {
         return label
     }()
     
-    let btnSignIn: UIButton = {
+    private let btnSignIn: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.backgroundColor = .red
@@ -75,7 +75,7 @@ final class SignInViewController: UIViewController {
         return button
     }()
     
-    let passwordField: UITextField = {
+    private let passwordField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
         textField.font = UIFont.systemFont(ofSize: 25)
@@ -85,7 +85,7 @@ final class SignInViewController: UIViewController {
         return textField
     }()
     
-    let userField: UITextField = {
+    private let userField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "User"
         textField.font = UIFont.systemFont(ofSize: 25)
@@ -95,7 +95,7 @@ final class SignInViewController: UIViewController {
         return textField
     }()
     
-    let subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign In"
         label.textColor = .black
@@ -105,7 +105,7 @@ final class SignInViewController: UIViewController {
         return label
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Testbank"
         label.textColor = .red

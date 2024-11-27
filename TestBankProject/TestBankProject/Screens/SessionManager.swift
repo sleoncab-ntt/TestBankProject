@@ -9,7 +9,8 @@ class SessionManager {
     static var shared = SessionManager()
     
     var userId: Int?
-    var userName: String?
+    var name: String?
+    var user: String?
     var email: String?
     var password: String?
     
@@ -17,7 +18,8 @@ class SessionManager {
     
     func clearSession() {
         userId = nil
-        userName = nil
+        name = nil
+        user = nil
         email = nil
         password = nil
     }

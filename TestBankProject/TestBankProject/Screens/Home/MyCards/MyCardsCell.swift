@@ -3,12 +3,11 @@
 //  TestBankProject
 //
 
-import Foundation
 import UIKit
 
 class MyCardsCell: UITableViewCell {
 
-    let cardNameLabel: UILabel = {
+    private let cardNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -17,7 +16,7 @@ class MyCardsCell: UITableViewCell {
         return label
     }()
     
-    let balanceLabel: UILabel = {
+    private let balanceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 25)
@@ -53,7 +52,7 @@ class MyCardsCell: UITableViewCell {
         ])
     }
 
-    func configure(with card: Card) {
+    func setupCard(with card: Card) {
         cardNameLabel.text = card.cardName
         if card.cardName == "Cuenta Soles SBP" {
             balanceLabel.text = String(format: "S/ %.2f", card.balance)
