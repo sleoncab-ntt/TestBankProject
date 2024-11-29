@@ -81,6 +81,7 @@ final class SignInViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 25)
         textField.borderStyle = .roundedRect
         textField.borderStyle = .none
+        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -190,23 +191,25 @@ final class SignInViewController: UIViewController {
     }
     
     @objc private func btnSignInTapped() {
+        let user = userField.text ?? ""
+        let password = passwordField.text ?? ""
         Task {
-            let user = userField.text ?? ""
-            let password = passwordField.text ?? ""
-                
             let isSuccess = await viewModel.authANDSaveCredentials(user: user, password: password)
-            
             if isSuccess {
-                let homeTabBarController = HomeTabBarController()
-                if let windowScene = view.window?.windowScene {
-                    if let window = windowScene.windows.first {
-                        window.rootViewController = homeTabBarController
-                        window.makeKeyAndVisible()
-                    }
-                }
+                navigateToHome()
                 print("Sesión iniciada")
             } else {
                 print("Usuario o contraseña incorrectos")
+            }
+        }
+    }
+    
+    private func navigateToHome() {
+        let homeTabBarController = HomeTabBarController()
+        if let windowScene = view.window?.windowScene {
+            if let window = windowScene.windows.first {
+                window.rootViewController = homeTabBarController
+                window.makeKeyAndVisible()
             }
         }
     }

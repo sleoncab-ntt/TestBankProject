@@ -7,6 +7,8 @@ import UIKit
 
 final class MyCardsViewController: UIViewController {
     
+    private let refreshControl = UIRefreshControl()
+    
     private let loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.color = .red
@@ -70,9 +72,10 @@ final class MyCardsViewController: UIViewController {
         tableView.register(MyCardsCell.self, forCellReuseIdentifier: "MyCardsCell")
         tableView.delegate = self
         tableView.dataSource = self
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         Task {
-            cardList = await saveCardListOfUser()
-            tableView.reloadData()
+            await loadCardData()
         }
     }
     
@@ -112,16 +115,32 @@ final class MyCardsViewController: UIViewController {
     }
     
     private func saveCardListOfUser() async -> [Card] {
+        let cardList = await viewModel.fetchCardsByID(for: SessionManager.shared.userId!)
+        return cardList
+    }
+    
+    private func loadCardData() async {
         DispatchQueue.main.async { [weak self] in
             self?.loadingIndicator.startAnimating()
             self?.loadingIndicator.isHidden = false
         }
-        let cardList = await viewModel.fetchCardsByID(for: SessionManager.shared.userId!)
-        DispatchQueue.main.async { [weak self] in
+        cardList = await saveCardListOfUser()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.loadingIndicator.stopAnimating()
             self?.loadingIndicator.isHidden = true
+            self?.tableView.reloadData()
         }
-        return cardList
+    }
+    
+    private func refreshCardData() async {
+        cardList = await saveCardListOfUser()
+    }
+    
+    @objc private func refreshTableView() {
+        Task {
+            await refreshCardData()
+            refreshControl.endRefreshing()
+        }
     }
     
     @objc func btnLogOutTapped() {

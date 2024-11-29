@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MyCardsCell: UITableViewCell {
+final class MyCardsCell: UITableViewCell {
 
     private let cardNameLabel: UILabel = {
         let label = UILabel()
@@ -52,7 +52,7 @@ class MyCardsCell: UITableViewCell {
         ])
     }
 
-    func setupCard(with card: Card) {
+    final func setupCard(with card: Card) {
         cardNameLabel.text = card.cardName
         if card.cardName == "Cuenta Soles SBP" {
             balanceLabel.text = String(format: "S/ %.2f", card.balance)

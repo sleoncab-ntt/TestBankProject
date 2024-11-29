@@ -14,11 +14,11 @@ struct UserCredentials {
     let password: String
 }
 
-class SignInViewModel {
+final class SignInViewModel {
     
-    private let networkingManager = NetworkingManager()
+    let networkingManager = NetworkingManager.shared
     
-    func fetchCredentials() async -> [UserCredentials] {
+    final func fetchCredentials() async -> [UserCredentials] {
         let credentialsList: CredentialsListResponse? = await networkingManager.fetchData(url: "http://localhost:3000/Users/Credentials")
 
         if let credentials = credentialsList?.users {
@@ -32,7 +32,7 @@ class SignInViewModel {
         }
     }
     
-    func authANDSaveCredentials(user: String, password: String) async -> Bool {
+    final func authANDSaveCredentials(user: String, password: String) async -> Bool {
         let credentialsList = await fetchCredentials()
         
         if let user = credentialsList.first(where: { $0.user == user && $0.password == password }) {

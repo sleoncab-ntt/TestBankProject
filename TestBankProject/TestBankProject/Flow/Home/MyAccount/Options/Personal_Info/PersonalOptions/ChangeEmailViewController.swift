@@ -88,9 +88,15 @@ final class ChangeEmailViewController: UIViewController {
             print("Error al guardar los datos")
             return
         }
-        print("Datos guardados satisfactoriamente")
-        print("E-mail: \(email)")
-        navigationController?.popViewController(animated: true)
+        let emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if emailPredicate.evaluate(with: email) {
+            print("Datos guardados satisfactoriamente")
+            print("E-mail: \(email)")
+            navigationController?.popViewController(animated: true)
+        } else {
+            print("Email inválido")
+        }
     }
 }
 

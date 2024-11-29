@@ -69,7 +69,7 @@ final class CommonQuestionsViewController: UIViewController {
         let bottomSheetVC = AnswerSheetViewController(question: question)
         if let sheet = bottomSheetVC.sheetPresentationController {
             sheet.detents = [
-                .custom { _ in 200 }
+                .custom { _ in 150 }
             ]
         }
         present(bottomSheetVC, animated: true)

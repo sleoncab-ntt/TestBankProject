@@ -167,13 +167,32 @@
 			children = (
 				B83C507D2CF01B200091BBA2 /* SessionManager.swift */,
 				B83C50A02CF6EC7A0091BBA2 /* LoadingScreen.swift */,
+				B83C50A32CF973A60091BBA2 /* Extensions */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B83C50A22CF76CCC0091BBA2 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDE9BB2CED68E500FBC05F /* SignIn */,
+				B8DDE9BC2CED691300FBC05F /* SignUp */,
+				B8DDE9BD2CED693600FBC05F /* Home */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		B83C50A32CF973A60091BBA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8DDE9742CEC09B400FBC05F = {
 			isa = PBXGroup;
 			children = (
+				B83C509F2CF6EC690091BBA2 /* Utils */,
 				B8DDE97F2CEC09B400FBC05F /* TestBankProject */,
 				B8DDE97E2CEC09B400FBC05F /* Products */,
 				B8DDE9B22CED671D00FBC05F /* Frameworks */,
@@ -191,10 +210,9 @@
 		B8DDE97F2CEC09B400FBC05F /* TestBankProject */ = {
 			isa = PBXGroup;
 			children = (
-				B8DDE9BA2CED68D600FBC05F /* Splash */,
-				B83C509F2CF6EC690091BBA2 /* Utils */,
 				B83C50892CF599710091BBA2 /* Components */,
-				B8DDE9B92CED68BD00FBC05F /* Screens */,
+				B8DDE9BA2CED68D600FBC05F /* Splash */,
+				B83C50A22CF76CCC0091BBA2 /* Flow */,
 				B8DDE9942CEC0A2300FBC05F /* Assets */,
 				B8DDE98E2CEC09B500FBC05F /* Info.plist */,
 			);
@@ -220,14 +238,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B8DDE9B92CED68BD00FBC05F /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				B8DDE9BB2CED68E500FBC05F /* SignIn */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
 		B8DDE9BA2CED68D600FBC05F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,8 +251,6 @@
 			children = (
 				B8DDE9982CEC0AD700FBC05F /* SignInViewController.swift */,
 				B8DDE9BE2CED6BA700FBC05F /* SignInViewModel.swift */,
-				B8DDE9BC2CED691300FBC05F /* SignUp */,
-				B8DDE9BD2CED693600FBC05F /* Home */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";

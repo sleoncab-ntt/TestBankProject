@@ -125,10 +125,8 @@ final class MyAccountViewController: UIViewController {
     
     @objc func btnLogOutTapped() {
         let splashViewController = SplashViewController()
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let keyWindow = windowScene.windows.first {
-            keyWindow.rootViewController = splashViewController
-            keyWindow.makeKeyAndVisible()
+        splashViewController.modalPresentationStyle = .fullScreen
+        present(splashViewController, animated: false) {
             print("Sesión cerrada")
         }
     }
@@ -143,7 +141,6 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let option = options[indexPath.row]
-        
         cell.textLabel?.text = option.title
         cell.textLabel?.textColor = .black
         cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
@@ -156,7 +153,6 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedOption = options[indexPath.row].title
-        
         let nextViewController: UIViewController
         switch selectedOption {
         case "Personal Information":
@@ -168,7 +164,6 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return
         }
-        
         nextViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(nextViewController, animated: true)
     }

@@ -59,16 +59,19 @@ final class SettingsViewController: UIViewController {
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
         let sureAction = UIAlertAction(title: "Sure", style: .destructive) { _ in
             print("Account deleted")
-            let splashViewController = SplashViewController()
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-               let keyWindow = windowScene.windows.first {
-                keyWindow.rootViewController = splashViewController
-                keyWindow.makeKeyAndVisible()
-            }
+            self.navigateToSignIn()
         }
         alertController.addAction(noAction)
         alertController.addAction(sureAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    private func navigateToSignIn() {
+        let splashViewController = SplashViewController()
+        splashViewController.modalPresentationStyle = .fullScreen
+        present(splashViewController, animated: false) {
+            print("Sesión cerrada")
+        }
     }
 }
 

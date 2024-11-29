@@ -3,7 +3,9 @@ import Foundation
 
 public class NetworkingManager {
     
-    public init() {}
+   public static let shared = NetworkingManager()
+        
+   private init() {}
     
     public func fetchData<T: Decodable>(url: String) async -> T? {
         let url = URL(string: url)!

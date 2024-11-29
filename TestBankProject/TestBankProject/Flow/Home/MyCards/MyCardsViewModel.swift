@@ -7,22 +7,22 @@ import Foundation
 import Networking
 
 public struct UserCards {
-    public let id: Int
-    public let cardList: [Card]
+    let id: Int
+    let cardList: [Card]
 }
 
 public struct Card {
-    public let cardName: String
-    public let balance: Double
+    let cardName: String
+    let balance: Double
 }
 
-class MyCardsViewModel {
+final class MyCardsViewModel {
     
-    private let networkingManager = NetworkingManager()
-    
+    let networkingManager = NetworkingManager.shared
+
     let URL = "http://localhost:3000/Users/Cards"
     
-    func fetchCards() async -> [UserCards] {
+    public func fetchCards() async -> [UserCards] {
         let cardsListResponse: CardsListResponse? = await networkingManager.fetchData(url: URL)
         
         if let users = cardsListResponse?.users {
@@ -38,7 +38,7 @@ class MyCardsViewModel {
         }
     }
     
-    func fetchCardsByID(for userId: Int) async -> [Card] {
+    public func fetchCardsByID(for userId: Int) async -> [Card] {
         let cardsListResponse: CardsListResponse? = await networkingManager.fetchData(url: URL)
         
         if let users = cardsListResponse?.users {
